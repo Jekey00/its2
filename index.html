@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IT-Systeme II – Quiz</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --ink: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+      --accent: #7dd3fc;
+      --ok: #22c55e;
+      --bad: #ef4444;
+      --soft: #111827;
+    }
+    * { box-sizing: border-box }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial;
+    }
+    .wrapper { max-width: 1200px; margin: 0 auto; padding: 20px }
+    .grid { display: grid; grid-template-columns: 300px 1fr; gap: 20px }
+    @media(max-width:1024px){ .grid{ grid-template-columns:1fr } .toc{position:static} }
+    .card { background: linear-gradient(180deg,#0f172a 0%,#0d1426 100%);
+      border:1px solid var(--border); border-radius:16px; padding:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35) }
+    .toc a{ display:flex; align-items:center; gap:10px; padding:10px 12px;
+      border-radius:12px; color:var(--muted); text-decoration:none; font-weight:500 }
+    .toc a:hover{ background:#0c1222; color:#fff }
+    .badge{min-width:32px;height:32px;border-radius:10px;background:#111827;color:#fff;
+      display:inline-flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700}
+    .qwrap{padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--soft);margin:12px 0}
+    .opt{display:flex;align-items:center;gap:10px;padding:12px;border:1px dashed var(--border);
+      border-radius:12px;background:#0b1220;transition:transform .06s ease,border-color .2s ease}
+    .opt:hover{transform:translateY(-1px);border-color:#334155}
+    .opt.correct{border-color:var(--ok);box-shadow:0 0 0 2px rgba(34,197,94,.3) inset}
+    .opt.incorrect{border-color:var(--bad);box-shadow:0 0 0 2px rgba(239,68,68,.3) inset}
+    .feedback{margin-top:8px;min-height:1.2em}
+    .feedback.ok{color:var(--ok)} .feedback.bad{color:var(--bad)}
+    button{border:1px solid var(--border);background:#0b1220;color:#e6edf3;
+      border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:700;line-height:1;min-height:40px}
+    button.ghost{background:transparent}
+    .answer,.steps{display:none;border-left:4px solid var(--accent);background:#0a182b;
+      padding:12px;border-radius:10px;margin-top:10px}
+    .steps{border-left-color:var(--ok);background:#0b1e16}
+    a.toggle{color:var(--accent);font-weight:700;text-decoration:none}
+  </style>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="grid">
+<aside class="toc card">
+<h3>Inhalt</h3>
+<a href="#sec-1"><span class="num">1</span><span>Betriebssysteme</span></a>
+<a href="#sec-2"><span class="num">2</span><span>Virtualisierung</span></a>
+<a href="#sec-3"><span class="num">3</span><span>Windows / macOS / Linux</span></a>
+<a href="#sec-4"><span class="num">4</span><span>Dateisysteme & Rechte</span></a>
+<a href="#sec-5"><span class="num">5</span><span>Softwarelizenzen</span></a>
+<div class="small" style="margin-top:10px">Stand: 2025-10-13 • Quiz ohne Punkte</div>
+</aside>
+
+<main>
+<header class="card">
+  <div>
+    <h1>IT-Systeme II – Quiz</h1>
+    <p class="small">Kapitelbasiertes Übungsquiz zum Lernfeld IT-Systeme II.<br>
+    MC-Fragen mit Lösungseinblendung, offene Fragen mit Erklär-/Schrittansicht.</p>
+  </div>
+</header>
+
+<section class="section card" id="sec-1">
+<div class="sec-head"><span class="badge">1</span><h2>Betriebssysteme</h2></div>
+
+<div class="qwrap" data-qid="1" data-correct="A">
+  <div class="q"><b>1.</b> Was versteht man unter einem Betriebssystem?</div>
+  <div class="options">
+    <div class="opt" data-letter="A"><span class="pill">A</span>Software, die Hardware steuert und Anwendungsprogramme unterstützt</div>
+    <div class="opt" data-letter="B"><span class="pill">B</span>Nur ein Texteditor</div>
+    <div class="opt" data-letter="C"><span class="pill">C</span>Ein Hardware-Treiber</div>
+    <div class="opt" data-letter="D"><span class="pill">D</span>Nur eine Benutzeroberfläche</div>
+  </div>
+  <div class="feedback"></div>
+  <div class="qcontrols">
+    <button class="ghost" data-action="show-correct" data-qid="1">Richtige Antwort anzeigen</button>
+  </div>
+</div>
+
+<div class="qwrap" data-qid="2" data-correct="A">
+  <div class="q"><b>2.</b> Welche Aufgaben übernimmt der Kernel eines Betriebssystems?</div>
+  <div class="options">
+    <div class="opt" data-letter="A"><span class="pill">A</span>Verwaltung von Speicher, Prozessor, Geräten und Prozessen</div>
+    <div class="opt" data-letter="B"><span class="pill">B</span>Installation von Programmen</div>
+    <div class="opt" data-letter="C"><span class="pill">C</span>Darstellung der grafischen Oberfläche</div>
+    <div class="opt" data-letter="D"><span class="pill">D</span>Nutzerkommunikation im Netzwerk</div>
+  </div>
+  <div class="feedback"></div>
+  <div class="qcontrols">
+    <button class="ghost" data-action="show-correct" data-qid="2">Richtige Antwort anzeigen</button>
+  </div>
+</div>
+
+<div class="qwrap" data-qid="3" data-correct="C">
+  <div class="q"><b>3.</b> Welches Betriebssystem zählt zu den <i>Echtzeit-Systemen</i>?</div>
+  <div class="options">
+    <div class="opt" data-letter="A"><span class="pill">A</span>Windows 11</div>
+    <div class="opt" data-letter="B"><span class="pill">B</span>macOS Sonoma</div>
+    <div class="opt" data-letter="C"><span class="pill">C</span>VxWorks oder QNX</div>
+    <div class="opt" data-letter="D"><span class="pill">D</span>Ubuntu Desktop</div>
+  </div>
+  <div class="feedback"></div>
+  <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="3">Richtige Antwort anzeigen</button></div>
+</div>
+
+<div class="qwrap" data-qid="4" data-correct="B">
+  <div class="q"><b>4.</b> Welche Aussage beschreibt ein eingebettetes Betriebssystem am besten?</div>
+  <div class="options">
+    <div class="opt" data-letter="A"><span class="pill">A</span>Ein OS mit vielen grafischen Effekten</div>
+    <div class="opt" data-letter="B"><span class="pill">B</span>Ein OS, das fest in Geräten wie Waschmaschinen integriert ist</div>
+    <div class="opt" data-letter="C"><span class="pill">C</span>Ein Serverbetriebssystem mit hoher Skalierbarkeit</div>
+    <div class="opt" data-letter="D"><span class="pill">D</span>Eine Cloud-Plattform</div>
+  </div>
+  <div class="feedback"></div>
+  <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="4">Richtige Antwort anzeigen</button></div>
+</div>
+
+<div class="qwrap" data-qid="5" data-correct="A">
+  <div class="q"><b>5.</b> Worin unterscheidet sich ein Server- von einem Client-Betriebssystem?</div>
+  <div class="options">
+    <div class="opt" data-letter="A"><span class="pill">A</span>Server-OS stellen Dienste bereit, Client-OS werden direkt von Anwendern genutzt</div>
+    <div class="opt" data-letter="B"><span class="pill">B</span>Server-OS haben zwingend eine grafische Oberfläche</div>
+    <div class="opt" data-letter="C"><span class="pill">C</span>Client-OS können keine Netzwerke nutzen</div>
+    <div class="opt" data-letter="D"><span class="pill">D</span>Es gibt keinen Unterschied</div>
+  </div>
+  <div class="feedback"></div>
+  <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="5">Richtige Antwort anzeigen</button></div>
+</div>
+
+<div class="qwrap" data-qid="6">
+  <div class="q"><b>6.</b> Nennen Sie zwei Kriterien, die bei der Auswahl eines Betriebssystems in Unternehmen eine Rolle spielen.</div>
+  <div class="answer" id="ans-6"><b>Lösung:</b><div class="calc">Verwaltbarkeit, Kosten, Software-Kompatibilität, vorhandene Kompetenzen, Homogenität der Systeme, Sicherheit oder Kundenanforderungen.</div></div>
+  <div class="small"><a class="toggle" href="#" data-toggle-target="ans-6">Lösung ein-/ausblenden</a></div>
+</div>
+
+<div class="qwrap" data-qid="7">
+  <div class="q"><b>7.</b> Erklären Sie kurz den Begriff <i>Treiber</i> im Zusammenhang mit Betriebssystemen.</div>
+  <div class="answer" id="ans-7"><b>Lösung:</b><div class="calc">Ein Treiber ist ein Softwaremodul, das das Betriebssystem mit einer bestimmten Hardwarekomponente kommunizieren lässt.</div></div>
+  <div class="small"><a class="toggle" href="#" data-toggle-target="ans-7">Lösung ein-/ausblenden</a></div>
+</div>
+
+<!-- - Ende Abschnitt 1 - -->
+
+</section>
+<section class="section card" id="sec-2">
+  <div class="sec-head"><span class="badge">2</span><h2>Virtualisierung</h2></div>
+
+  <div class="qwrap" data-qid="8" data-correct="A,B">
+    <div class="q"><b>8.</b> Welche Aussagen treffen auf einen Typ-1 (Bare-Metal) Hypervisor zu? (Mehrfachauswahl)</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Läuft direkt auf der Hardware ohne darunterliegendes Host-OS</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Hohe Leistung und häufig in Rechenzentren eingesetzt</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Benötigt zwingend ein Windows-Desktop als Host</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Ist immer Open Source</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="8">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="9" data-correct="C">
+    <div class="q"><b>9.</b> Welches Beispiel ist ein Typ-2 (Hosted) Hypervisor?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>VMware ESXi</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>KVM (auf Linux-Servern)</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Oracle VirtualBox auf Windows</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Xen (in Citrix Hypervisor)</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="9">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="10" data-correct="A,B">
+    <div class="q"><b>10.</b> Nennen Sie zwei Vorteile der Virtualisierung. (Mehrfachauswahl)</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Bessere Auslastung der Hardware / Kostenersparnis</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Isolation der Systeme (Sicherheit, Testbarkeit)</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Unbegrenzte Performance ohne Overhead</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Automatische Skalierung ohne Konfiguration</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="10">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="11" data-correct="D">
+    <div class="q"><b>11.</b> Was beschreibt ein Snapshot einer virtuellen Maschine am besten?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Eine permanente Erhöhung der VM-Ressourcen</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Eine Sicherung auf Bandlaufwerk</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Eine Lizenzform für VMs</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Ein Momentaufnahme-Zustand, zu dem die VM zurückgesetzt werden kann</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="11">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="12" data-correct="B">
+    <div class="q"><b>12.</b> Welcher Nachteil ist typisch für Virtualisierung gegenüber Bare-Metal-Installationen?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Völlig fehlende Isolation</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Mehraufwand in Ressourcen (Overhead) und ggf. Performanceverlust</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Unmögliche Migration</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Keine Backups möglich</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="12">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="13" data-correct="A,C">
+    <div class="q"><b>13.</b> Welche Technologien oder Begriffe gehören direkt zur Virtualisierung? (Mehrfachauswahl)</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Hypervisor</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>RAID-Level 0</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Virtuelle Maschine (VM)</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>HTML</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="13">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="14" data-correct="A">
+    <div class="q"><b>14.</b> Was bedeutet „Live-Migration“ in Virtualisierungsumgebungen?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Verschieben einer laufenden VM von einem Host zu einem anderen ohne Ausfallzeit</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Eine Methode zur Backup-Archivierung</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Update des Hypervisors</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Eine Cloud-basierte Lizenz</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="14">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="15">
+    <div class="q"><b>15.</b> Erklären Sie kurz den Unterschied zwischen Virtualisierung und Emulation.</div>
+    <div class="answer" id="ans-15"><b>Lösung:</b><div class="calc">Virtualisierung teilt vorhandene physische Ressourcen und nutzt die gleiche Hardwarearchitektur; Emulation bildet eine andere Hardwarearchitektur nach und kann Performanceeinbußen haben, erlaubt aber die Ausführung andersarchitekturierter Systeme.</div></div>
+    <div class="small"><a class="toggle" href="#" data-toggle-target="ans-15">Lösung ein-/ausblenden</a></div>
+  </div>
+
+</section>
+
+<!-- - Ende Abschnitt 2 - -->
+
+<section class="section card" id="sec-3">
+  <div class="sec-head"><span class="badge">3</span><h2>Windows / macOS / Linux</h2></div>
+
+  <div class="qwrap" data-qid="16" data-correct="C">
+    <div class="q"><b>16.</b> Welches Betriebssystem war ursprünglich ein grafischer Aufsatz für MS-DOS?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Linux</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>macOS X</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Microsoft Windows 1.0</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Unix SVR4</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="16">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="17" data-correct="A">
+    <div class="q"><b>17.</b> Welcher Windows-Ordner enthält die Benutzerprofile?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>C:\Users (bzw. Benutzer)</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>C:\Program Files (x86)</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>C:\Windows\System32</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>C:\Temp</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="17">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="18" data-correct="A">
+    <div class="q"><b>18.</b> Was bedeutet die 64-Bit-Variante eines Windows-Betriebssystems?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Das System kann mehr Arbeitsspeicher ansprechen als 32-Bit-Versionen</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Nur Programme mit 32 Bit laufen darauf</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Die CPU arbeitet nur mit 32 Bit</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Das Dateisystem wird verschlüsselt</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="18">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="19" data-correct="D">
+    <div class="q"><b>19.</b> Welche Aussage zu macOS ist korrekt?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>macOS basiert auf MS-DOS</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>macOS unterstützt keine grafische Oberfläche</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>macOS ist ein reines Server-Betriebssystem</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>macOS basiert auf Unix und nutzt die Oberfläche „Aqua“</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="19">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="20" data-correct="B">
+    <div class="q"><b>20.</b> Welche Aussage über Linux ist falsch?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Linux basiert auf Unix-Prinzipien</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Linux ist nur für Server verfügbar</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Linux-Distributionen beinhalten Kernel + Softwarepakete</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Linux wird oft als Open-Source angeboten</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="20">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="21" data-correct="A,B">
+    <div class="q"><b>21.</b> Welche Linux-Komponenten oder Befehle sind typisch? (Mehrfachauswahl)</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Shell / Terminal</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Befehle wie cd, ls, chmod</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Registry</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Finder</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="21">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="22" data-correct="A">
+    <div class="q"><b>22.</b> Wofür stehen die Kürzel „su“ und „sudo“ unter Linux?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>su = switch user, sudo = execute command as superuser (Administratorrechte)</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>su = setup update, sudo = shutdown daemon</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Beide starten automatisch Grafikprogramme</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Nur auf macOS vorhanden</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="22">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="23">
+    <div class="q"><b>23.</b> Nennen Sie zwei Beispiele für Linux-Distributionen und deren typische Einsatzgebiete.</div>
+    <div class="answer" id="ans-23"><b>Lösung:</b>
+      <div class="calc">
+        Ubuntu – weit verbreitet im Desktop-Bereich; Debian – Basis für viele Distributionen und Server; Red Hat Enterprise Linux – kommerzielles Serversystem; Kali Linux – Sicherheits- und Pen-Testing.
+      </div>
+    </div>
+    <div class="small"><a class="toggle" href="#" data-toggle-target="ans-23">Lösung ein-/ausblenden</a></div>
+  </div>
+
+</section>
+
+<!-- - Ende Abschnitt 3 - -->
+
+<section class="section card" id="sec-4">
+  <div class="sec-head"><span class="badge">4</span><h2>Dateisysteme & Rechteverwaltung</h2></div>
+
+  <div class="qwrap" data-qid="24" data-correct="B">
+    <div class="q"><b>24.</b> Welches Dateisystem ist Standard bei modernen Windows-Versionen?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>ext4</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>NTFS</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>APFS</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>HFS+</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="24">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="25" data-correct="A">
+    <div class="q"><b>25.</b> Wie lautet das Standard-Dateisystem aktueller Linux-Distributionen?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>ext4</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>NTFS</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>APFS</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>FAT32</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="25">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="26" data-correct="B">
+    <div class="q"><b>26.</b> In welchem Verzeichnis liegt bei Linux typischerweise der Benutzerordner?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>/root</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>/home</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>/etc</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>/usr/bin</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="26">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="27" data-correct="A">
+    <div class="q"><b>27.</b> Welche Aussage zur Benutzer- und Rechteverwaltung unter Linux ist korrekt?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Rechte werden über Benutzer, Gruppen und Dateiattribute (r, w, x) gesteuert</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Es gibt keine Administratorrechte</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Jede Datei gehört immer mehreren Benutzern gleichzeitig</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Rechte können nicht geändert werden</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="27">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="28">
+    <div class="q"><b>28.</b> Erklären Sie kurz die Bedeutung der drei Buchstaben r, w und x bei Linux-Dateirechten.</div>
+    <div class="answer" id="ans-28">
+      <b>Lösung:</b>
+      <div class="calc">
+        r = read (lesen), w = write (schreiben), x = execute (ausführen).  
+        Sie gelten getrennt für Besitzer, Gruppe und andere Benutzer.
+      </div>
+    </div>
+    <div class="small"><a class="toggle" href="#" data-toggle-target="ans-28">Lösung ein-/ausblenden</a></div>
+  </div>
+
+</section>
+<!-- - Ende Abschnitt 4 - -->
+ <section class="section card" id="sec-5">
+  <div class="sec-head"><span class="badge">5</span><h2>Softwarelizenzen</h2></div>
+
+  <div class="qwrap" data-qid="29" data-correct="A">
+    <div class="q"><b>29.</b> Was beschreibt eine proprietäre Softwarelizenz?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Die Nutzung ist eingeschränkt, Quellcode ist nicht frei zugänglich</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Die Software darf beliebig verändert und weitergegeben werden</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Die Software gehört der Allgemeinheit</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Sie darf ohne Zustimmung verkauft werden</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="29">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="30" data-correct="C">
+    <div class="q"><b>30.</b> Was ist charakteristisch für Open-Source-Software?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Sie darf nicht verändert werden</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>Sie darf nur privat genutzt werden</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>Der Quellcode ist offen und darf unter bestimmten Bedingungen genutzt oder verändert werden</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>Sie ist grundsätzlich kostenlos und lizenzfrei</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="30">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="31" data-correct="A">
+    <div class="q"><b>31.</b> Welche Organisation definiert die Grundsätze freier Software (Free Software)?</div>
+    <div class="options">
+      <div class="opt" data-letter="A"><span class="pill">A</span>Free Software Foundation (FSF)</div>
+      <div class="opt" data-letter="B"><span class="pill">B</span>ISO</div>
+      <div class="opt" data-letter="C"><span class="pill">C</span>World Wide Web Consortium (W3C)</div>
+      <div class="opt" data-letter="D"><span class="pill">D</span>IEEE</div>
+    </div>
+    <div class="feedback"></div>
+    <div class="qcontrols"><button class="ghost" data-action="show-correct" data-qid="31">Richtige Antwort anzeigen</button></div>
+  </div>
+
+  <div class="qwrap" data-qid="32">
+    <div class="q"><b>32.</b> Nennen Sie zwei Beispiele für bekannte Open-Source-Lizenzen und beschreiben Sie kurz deren Zweck.</div>
+    <div class="answer" id="ans-32">
+      <b>Lösung:</b>
+      <div class="calc">
+        GPL (General Public License) – erlaubt Nutzung, Veränderung und Weitergabe, erfordert Offenlegung des Quellcodes.<br>
+        MIT-Lizenz – sehr frei, erlaubt nahezu beliebige Nutzung mit Hinweis auf Urheber.<br>
+        Creative Commons – verschiedene Varianten für freie Veröffentlichung von Inhalten.
+      </div>
+    </div>
+    <div class="small"><a class="toggle" href="#" data-toggle-target="ans-32">Lösung ein-/ausblenden</a></div>
+  </div>
+
+</section>
+
+</main>
+</div>
+</div>
+
+<script>
+  // === Grundlegende Quiz-Interaktionen ===
+  document.querySelectorAll('.opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const wrap = opt.closest('.qwrap');
+      const feedback = wrap.querySelector('.feedback');
+      const correct = wrap.dataset.correct.split(',');
+      const letter = opt.dataset.letter;
+      const isCorrect = correct.includes(letter);
+      wrap.querySelectorAll('.opt').forEach(o => o.classList.remove('correct','incorrect'));
+      if (isCorrect) {
+        opt.classList.add('correct');
+        feedback.textContent = '✅ Richtig!';
+        feedback.className = 'feedback ok';
+      } else {
+        opt.classList.add('incorrect');
+        feedback.textContent = '❌ Falsch!';
+        feedback.className = 'feedback bad';
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-action="show-correct"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.qwrap');
+      const correct = wrap.dataset.correct.split(',');
+      wrap.querySelectorAll('.opt').forEach(opt => {
+        if (correct.includes(opt.dataset.letter)) {
+          opt.classList.add('correct');
+        } else {
+          opt.classList.remove('incorrect');
+        }
+      });
+      const fb = wrap.querySelector('.feedback');
+      fb.textContent = '✔️ Richtige Antwort: ' + correct.join(', ');
+      fb.className = 'feedback ok';
+    });
+  });
+
+  // === Lösungstoggles für offene Fragen ===
+  document.querySelectorAll('a.toggle').forEach(t => {
+    t.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(t.dataset.toggleTarget);
+      if (target.style.display === 'block') {
+        target.style.display = 'none';
+      } else {
+        target.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
